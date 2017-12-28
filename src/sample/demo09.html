@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>sample 09 - John081946</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div>测试State, 绑定事件</div>
+        <div id="example"></div>
+        <script type="text/babel">
+            class Input extends React.Component{
+                constructor(props){
+                    super(props);
+                    this.state = {value: 'Hello!'};
+                    // 这个绑定是必要的，使`this`在回调中起作用
+                    this.handleChange = this.handleChange.bind(this);
+                }
+                
+                handleChange(event) {
+                    this.setState({value: event.target.value});
+                }
+
+                render() {
+                    var value = this.state.value;
+                    return (
+                    <div>
+                        <input type="text" value={value} onChange={this.handleChange} />
+                        <p>{value}</p>
+                    </div>
+                    );
+                }
+            }
+
+            ReactDOM.render(<Input/>, document.getElementById('example'));
+        </script>
+        
+    </body>
+</html>

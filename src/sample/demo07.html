@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>sample 07 - John081946</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div>绑定事件</div>
+        <div id="example"></div>
+        <script type="text/babel">
+            class MyComponent extends React.Component{
+                constructor(props) {
+                    super(props);
+                    // 这个绑定是必要的，使`this`在回调中起作用
+                    this.handleClick = this.handleClick.bind(this);
+                }
+                
+                handleClick() {
+                    this.refs.myTextInput.focus();
+                }
+
+                render() {
+                    return (
+                        <div>
+                        <input type="text" ref="myTextInput" />
+                        <input type="button" value="Focus the text input" onClick={this.handleClick} />
+                        </div>
+                    );
+                }
+            }
+
+            ReactDOM.render(
+                <MyComponent />,
+                document.getElementById('example')
+            );
+        </script>
+        
+    </body>
+</html>

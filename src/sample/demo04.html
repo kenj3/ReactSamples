@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>sample 04 - John081946</title>
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+    </head>
+    <body>
+        <div>一个简单的组件：</div>
+        <div id="example"></div>
+        <script type="text/babel">
+            class HelloMessage extends React.Component{
+                render() {
+                    return <h1>Hello {this.props.name}</h1>;
+                }
+            }
+            ReactDOM.render(
+            <HelloMessage name="John" />,
+            document.getElementById('example')
+            );
+        </script>
+        
+    </body>
+</html>
