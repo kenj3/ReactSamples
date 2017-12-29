@@ -12,10 +12,10 @@ import promiseMiddleware from './redux-promise';
 import { operationMiddleware } from './redux-operation';
 
 export default class {
+
   constructor({ debug = false, history, router, reducer, onError, onRouterChange }) {
 
     history = history || hashHistory;
-
     this.debug = debug;
 
     this.hooks = {

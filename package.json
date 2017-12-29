@@ -1,7 +1,7 @@
 {
   "name": "admin",
   "version": "1.0.0",
-  "description": "运去哪后台管理系统adminV3",
+  "description": "后台管理系统admin",
   "scripts": {
     "start": "better-npm-run start:dev",
     "build": "better-npm-run build",

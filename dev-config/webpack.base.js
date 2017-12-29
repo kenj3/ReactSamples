@@ -19,7 +19,7 @@ const ASSET_PUBLIC_PATH = 'asset/';
 const pageEntry = [
     {
         name:'admin',
-        title: '运去哪后台管理系统'
+        title: '后台管理系统'
     }
 ];
 
